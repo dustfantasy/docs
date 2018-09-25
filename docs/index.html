@@ -16,7 +16,8 @@
       name: '',
       repo: '',
       loadSidebar: true,
-      subMaxLevel: 2
+      subMaxLevel: 2,
+      search: 'auto' // 默认值
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
@@ -24,17 +25,21 @@
 
   <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
   <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
 
   <script>
-    const gitalk = new Gitalk({
+    var gitalkOptions = {
       clientID: '4554bd71902499f5c5d2',
-      clientSecret: '804e40ea4a7719b536214b00fd47a74c3896b9ec',
-      repo: 'Github repo',
-      owner: 'Github repo owner',
-      admin: ['Github repo collaborators, only these guys can initialize github issues'],
+      clientSecret: '358d64811884f73e9fb2d6a5ef554953633a6196',
+      repo: 'docs',
+      owner: 'dustfantasy',
+      admin: ['dustfantasy'],
+      id: location.hash,
       // facebook-like distraction free mode
       distractionFreeMode: false
-    })
+    }
+    var gitalk = new Gitalk(gitalkOptions)
+    
   </script>
 
 
